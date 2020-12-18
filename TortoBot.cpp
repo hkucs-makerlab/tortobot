@@ -69,6 +69,7 @@ void  TortoBot::refresh() {
   for (int i = 0; i < MAX_LEG_SERVOS; i++) {
     angle[i] = oscillator[i].refresh();
   }
+  if (1) {
   if (!oscillator[0].isStop())
     servo[0].write(angle[FRONT_RIGHT_LEG] + trim[FRONT_RIGHT_LEG]);
   if (!oscillator[1].isStop())
@@ -77,6 +78,7 @@ void  TortoBot::refresh() {
     servo[2].write(180 - angle[REAR_RIGHT_LEG] + trim[REAR_RIGHT_LEG]);
   if (!oscillator[3].isStop())
     servo[3].write(180 - angle[REAR_LEFT_LEG] + trim[REAR_LEFT_LEG]);
+  }
 }
 
 void  TortoBot::walk(bool rev, float T) {
